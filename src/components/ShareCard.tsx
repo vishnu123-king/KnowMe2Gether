@@ -66,14 +66,14 @@ export const ShareCard: React.FC<ShareCardProps> = ({
     <motion.div
       initial={{ opacity: 0, scale: 0.95, y: 15 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      className="bg-white rounded-3xl border-2 border-rose-100 p-6 sm:p-8 shadow-xl max-w-xl mx-auto text-center relative overflow-hidden"
+      className="bg-white rounded-2xl sm:rounded-3xl border-2 border-rose-100 p-4 sm:p-8 shadow-xl max-w-xl mx-auto text-center relative overflow-hidden"
     >
       {/* Decorative top ribbon */}
       <div className="absolute -top-10 -right-10 w-28 h-28 bg-rose-100/50 rounded-full blur-xl pointer-events-none" />
 
       {/* Cute celebrating teddy */}
-      <div className="flex justify-center mb-2">
-        <AnimatedTeddy pose="celebrating" size={150} />
+      <div className="flex justify-center mb-1 sm:mb-2">
+        <AnimatedTeddy pose="celebrating" size={110} />
       </div>
 
       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold mb-2">
@@ -81,18 +81,18 @@ export const ShareCard: React.FC<ShareCardProps> = ({
         <span>Ready to Share</span>
       </div>
 
-      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800 tracking-tight">
+      <h2 className="text-xl sm:text-3xl font-extrabold text-slate-800 tracking-tight">
         Your Test Is Ready! 🎉
       </h2>
 
-      <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto">
+      <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-md mx-auto">
         Send this special link to <strong className="text-rose-600 font-bold">{responderName}</strong>.
         Once they submit their answers, you will be able to privately view their responses!
       </p>
 
       {/* Share link container */}
-      <div className="mt-6 bg-slate-50 border border-slate-200/80 rounded-2xl p-3 flex flex-col sm:flex-row items-center gap-2">
-        <div className="flex-1 font-mono text-xs sm:text-sm text-slate-700 truncate w-full text-left px-2 select-all bg-white py-2 rounded-xl border border-slate-100">
+      <div className="mt-5 sm:mt-6 bg-slate-50 border border-slate-200/80 rounded-2xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-center gap-2 min-w-0">
+        <div className="flex-1 font-mono text-xs sm:text-sm text-slate-700 truncate w-full text-left px-2 select-all bg-white py-2 rounded-xl border border-slate-100 min-w-0">
           {publicShareLink}
         </div>
 

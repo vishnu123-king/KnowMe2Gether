@@ -16,8 +16,8 @@ export const AnimatedPanda: React.FC<AnimatedPandaProps> = ({
 }) => {
   return (
     <div
-      className={`relative inline-flex items-center justify-center select-none ${className}`}
-      style={{ width: size, height: size }}
+      className={`relative inline-flex items-center justify-center select-none shrink-0 ${className}`}
+      style={{ width: size, height: size, maxWidth: '100%', maxHeight: '100%' }}
     >
       <motion.svg
         viewBox="0 0 200 200"

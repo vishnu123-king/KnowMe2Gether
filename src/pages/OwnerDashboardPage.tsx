@@ -100,12 +100,12 @@ export const OwnerDashboardPage: React.FC<OwnerDashboardPageProps> = ({ onNaviga
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12 space-y-8">
+    <div className="max-w-4xl mx-auto px-3.5 sm:px-4 py-6 sm:py-12 space-y-6 sm:space-y-8 safe-bottom">
       {/* Dashboard Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            <h1 className="text-xl sm:text-3xl font-black text-slate-900 tracking-tight">
               Owner Dashboard
             </h1>
             <span className="text-xs px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-700 font-extrabold">
@@ -120,7 +120,7 @@ export const OwnerDashboardPage: React.FC<OwnerDashboardPageProps> = ({ onNaviga
         <button
           type="button"
           onClick={() => onNavigate('/create')}
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-rose-500 hover:bg-rose-600 text-white font-bold text-sm shadow-xs transition-colors cursor-pointer"
+          className="self-start sm:self-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-2xl bg-rose-500 hover:bg-rose-600 text-white font-bold text-xs sm:text-sm shadow-xs transition-colors cursor-pointer"
         >
           <PlusCircle className="w-4 h-4" />
           <span>New Test</span>
@@ -234,8 +234,8 @@ export const OwnerDashboardPage: React.FC<OwnerDashboardPageProps> = ({ onNaviga
                   </div>
 
                   {/* Share Link Strip */}
-                  <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-2 flex items-center justify-between gap-2">
-                    <span className="font-mono text-[11px] text-slate-600 truncate flex-1 px-1">
+                  <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-2 flex items-center justify-between gap-2 min-w-0">
+                    <span className="font-mono text-[11px] text-slate-600 truncate flex-1 px-1 min-w-0">
                       {formatPublicShareUrl(test.shareUrl, test.responderToken)}
                     </span>
 
@@ -258,7 +258,7 @@ export const OwnerDashboardPage: React.FC<OwnerDashboardPageProps> = ({ onNaviga
                   </div>
 
                   {/* Bottom Action Buttons */}
-                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                  <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center gap-1">
                       <button
                         type="button"

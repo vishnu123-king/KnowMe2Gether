@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Ensure no text size adjustment distortion on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent iOS Safari 16px auto zoom on focus */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Support mobile notch / safe areas */
+.safe-bottom {
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+}
+.safe-top {
+  padding-top: max(0px, env(safe-area-inset-top));
+}

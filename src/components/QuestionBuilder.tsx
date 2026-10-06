@@ -155,12 +155,12 @@ export const QuestionBuilder: React.FC<QuestionBuilderProps> = ({
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+          <h3 className="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
             <span>Custom Questions</span>
             <span className="text-xs px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-700 font-extrabold">
-              {questions.length} / minimum 3
+              {questions.length} / min 3
             </span>
           </h3>
           <p className="text-xs text-slate-500 mt-0.5">
@@ -171,7 +171,7 @@ export const QuestionBuilder: React.FC<QuestionBuilderProps> = ({
         <button
           type="button"
           onClick={addQuestion}
-          className="flex items-center gap-1.5 px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white rounded-xl text-sm font-bold shadow-xs hover:shadow transition-all cursor-pointer"
+          className="self-start sm:self-auto flex items-center gap-1.5 px-3.5 sm:px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs hover:shadow transition-all cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Add Question</span>
@@ -262,44 +262,44 @@ export const QuestionBuilder: React.FC<QuestionBuilderProps> = ({
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                     Question Type
                   </label>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-3 gap-1 sm:gap-2">
                     <button
                       type="button"
                       onClick={() => updateQuestion(q.id, { type: 'text' })}
-                      className={`flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
+                      className={`flex items-center justify-center gap-1 sm:gap-1.5 py-2 px-1.5 sm:px-3 rounded-xl border text-[11px] sm:text-xs font-bold transition-all cursor-pointer ${
                         q.type === 'text'
                           ? 'border-rose-500 bg-rose-50 text-rose-700 shadow-xs'
                           : 'border-slate-200 bg-slate-50/50 text-slate-600 hover:bg-slate-100'
                       }`}
                     >
-                      <HelpCircle className="w-3.5 h-3.5" />
-                      <span>Text Answer</span>
+                      <HelpCircle className="w-3.5 h-3.5 shrink-0" />
+                      <span className="truncate">Text</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => updateQuestion(q.id, { type: 'multiple_choice' })}
-                      className={`flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
+                      className={`flex items-center justify-center gap-1 sm:gap-1.5 py-2 px-1.5 sm:px-3 rounded-xl border text-[11px] sm:text-xs font-bold transition-all cursor-pointer ${
                         q.type === 'multiple_choice'
                           ? 'border-rose-500 bg-rose-50 text-rose-700 shadow-xs'
                           : 'border-slate-200 bg-slate-50/50 text-slate-600 hover:bg-slate-100'
                       }`}
                     >
-                      <ListFilter className="w-3.5 h-3.5" />
-                      <span>Multiple Choice</span>
+                      <ListFilter className="w-3.5 h-3.5 shrink-0" />
+                      <span className="truncate">Choice</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => updateQuestion(q.id, { type: 'yes_no' })}
-                      className={`flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
+                      className={`flex items-center justify-center gap-1 sm:gap-1.5 py-2 px-1.5 sm:px-3 rounded-xl border text-[11px] sm:text-xs font-bold transition-all cursor-pointer ${
                         q.type === 'yes_no'
                           ? 'border-rose-500 bg-rose-50 text-rose-700 shadow-xs'
                           : 'border-slate-200 bg-slate-50/50 text-slate-600 hover:bg-slate-100'
                       }`}
                     >
-                      <ToggleLeft className="w-3.5 h-3.5" />
-                      <span>Yes / No</span>
+                      <ToggleLeft className="w-3.5 h-3.5 shrink-0" />
+                      <span className="truncate">Yes / No</span>
                     </button>
                   </div>
                 </div>

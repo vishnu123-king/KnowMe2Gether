@@ -163,7 +163,7 @@ export const OwnerTestDetailPage: React.FC<OwnerTestDetailPageProps> = ({
   // If in answers review mode
   if (viewMode === 'review' && answerReview) {
     return (
-      <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-8">
+      <div className="max-w-3xl mx-auto px-3.5 sm:px-4 py-6 sm:py-12 space-y-6 sm:space-y-8 safe-bottom">
         <div className="flex items-center justify-between">
           <button
             type="button"
@@ -176,7 +176,7 @@ export const OwnerTestDetailPage: React.FC<OwnerTestDetailPageProps> = ({
         </div>
 
         {/* Header Banner */}
-        <div className="bg-white rounded-3xl border-2 border-rose-100 p-6 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border-2 border-rose-100 p-4 sm:p-6 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           <div className="space-y-1.5 text-center sm:text-left">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold mb-1">
               <MessageSquareHeart className="w-3.5 h-3.5" />
@@ -269,7 +269,7 @@ export const OwnerTestDetailPage: React.FC<OwnerTestDetailPageProps> = ({
 
   // Default: Overview Mode
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-8">
+    <div className="max-w-3xl mx-auto px-3.5 sm:px-4 py-6 sm:py-12 space-y-6 sm:space-y-8 safe-bottom">
       {/* Top back button */}
       <button
         type="button"
@@ -281,7 +281,7 @@ export const OwnerTestDetailPage: React.FC<OwnerTestDetailPageProps> = ({
       </button>
 
       {/* Main Info Card */}
-      <div className="bg-white rounded-3xl border-2 border-rose-100 p-6 sm:p-8 shadow-md space-y-6">
+      <div className="bg-white rounded-2xl sm:rounded-3xl border-2 border-rose-100 p-4 sm:p-8 shadow-md space-y-5 sm:space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-rose-50 pb-5">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold mb-1">

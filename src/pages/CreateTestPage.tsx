@@ -162,7 +162,7 @@ export const CreateTestPage: React.FC<CreateTestPageProps> = ({ onNavigate }) =>
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-8">
+    <div className="max-w-3xl mx-auto px-3.5 sm:px-4 py-6 sm:py-12 space-y-6 sm:space-y-8">
       {/* Back button */}
       <button
         type="button"
@@ -175,14 +175,14 @@ export const CreateTestPage: React.FC<CreateTestPageProps> = ({ onNavigate }) =>
 
       {/* Header */}
       <div className="text-center space-y-2">
-        <div className="flex justify-center items-center gap-3 mb-1">
-          <AnimatedTeddy pose="thinking" size={100} />
-          <AnimatedPanda pose="thinking" size={100} />
+        <div className="flex justify-center items-center gap-2 sm:gap-3 mb-1">
+          <AnimatedTeddy pose="thinking" size={85} />
+          <AnimatedPanda pose="thinking" size={85} />
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
           Create Your Friendship Test
         </h1>
-        <p className="text-sm text-slate-600 max-w-md mx-auto">
+        <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
           Enter your details, write custom questions, and set the correct answers only you know!
         </p>
       </div>
@@ -199,9 +199,9 @@ export const CreateTestPage: React.FC<CreateTestPageProps> = ({ onNavigate }) =>
       )}
 
       {/* Main Creation Form */}
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
         {/* Basic Details Card */}
-        <div className="bg-white rounded-3xl border-2 border-rose-100 p-6 shadow-xs space-y-5">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border-2 border-rose-100 p-4 sm:p-6 shadow-xs space-y-4 sm:space-y-5">
           <div className="flex items-center gap-2 border-b border-rose-50 pb-3">
             <Sparkles className="w-4 h-4 text-amber-500" />
             <h2 className="font-extrabold text-base text-slate-800">
@@ -267,7 +267,7 @@ export const CreateTestPage: React.FC<CreateTestPageProps> = ({ onNavigate }) =>
         </div>
 
         {/* Custom Question Builder */}
-        <div className="bg-white/70 backdrop-blur-xs rounded-3xl border-2 border-rose-100/90 p-6 shadow-xs">
+        <div className="bg-white/70 backdrop-blur-xs rounded-2xl sm:rounded-3xl border-2 border-rose-100/90 p-3 sm:p-6 shadow-xs">
           <QuestionBuilder questions={questions} onChange={setQuestions} />
         </div>
 
@@ -276,7 +276,7 @@ export const CreateTestPage: React.FC<CreateTestPageProps> = ({ onNavigate }) =>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 py-4 px-10 rounded-2xl bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:to-pink-700 text-white font-extrabold text-base shadow-lg shadow-rose-200/80 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60 cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 py-3.5 sm:py-4 px-8 sm:px-10 rounded-2xl bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:to-pink-700 text-white font-extrabold text-sm sm:text-base shadow-lg shadow-rose-200/80 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60 cursor-pointer"
           >
             {isSubmitting ? (
               <>

@@ -196,17 +196,17 @@ export const ResponderTestPage: React.FC<ResponderTestPageProps> = ({
   const progressPercent = Math.round(((currentIndex + 1) / totalQuestions) * 100);
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-8 sm:py-12">
+    <div className="max-w-lg mx-auto px-3.5 sm:px-4 py-5 sm:py-10 safe-bottom">
       {/* Step 1: Welcome Screen */}
       {stepState === 'welcome' && (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white rounded-3xl border-2 border-rose-100 p-6 sm:p-8 shadow-xl text-center space-y-6"
+          className="bg-white rounded-2xl sm:rounded-3xl border-2 border-rose-100 p-5 sm:p-8 shadow-xl text-center space-y-5 sm:space-y-6"
         >
-          <div className="flex justify-center items-center gap-3">
-            <AnimatedTeddy pose="waving" size={130} />
-            <AnimatedPanda pose="waving" size={130} />
+          <div className="flex justify-center items-center gap-2 sm:gap-3">
+            <AnimatedTeddy pose="waving" size={95} />
+            <AnimatedPanda pose="waving" size={95} />
           </div>
 
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold">
@@ -214,12 +214,12 @@ export const ResponderTestPage: React.FC<ResponderTestPageProps> = ({
             <span>Friendship Quiz</span>
           </div>
 
-          <div className="space-y-2">
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+          <div className="space-y-1.5 sm:space-y-2">
+            <h1 className="text-xl sm:text-3xl font-black text-slate-900 tracking-tight">
               {test.title || 'How Well Do You Know Me?'}
             </h1>
-            <p className="text-base font-bold text-rose-600">
-              Ready? Let's see how well you know {test.ownerName}! ❤️
+            <p className="text-sm sm:text-base font-bold text-rose-600">
+              Ready? Let's see how well you know {test.ownerName}! 🌟
             </p>
             {test.description && (
               <p className="text-xs sm:text-sm text-slate-500 italic max-w-sm mx-auto">
@@ -279,23 +279,23 @@ export const ResponderTestPage: React.FC<ResponderTestPageProps> = ({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.25 }}
-              className="bg-white rounded-3xl border-2 border-rose-100 p-6 sm:p-7 shadow-xl space-y-6"
+              className="bg-white rounded-2xl sm:rounded-3xl border-2 border-rose-100 p-4 sm:p-7 shadow-xl space-y-4 sm:space-y-6"
             >
               {/* Question Header */}
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-black uppercase tracking-wider text-rose-500 bg-rose-50 px-2.5 py-1 rounded-full border border-rose-100">
+                <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-rose-500 bg-rose-50 px-2.5 py-1 rounded-full border border-rose-100">
                   {currentQ.type === 'multiple_choice' ? 'Multiple Choice' : currentQ.type === 'yes_no' ? 'Yes / No' : 'Text Answer'}
                 </span>
 
                 {currentIndex % 2 === 0 ? (
-                  <AnimatedTeddy pose="thinking" size={54} />
+                  <AnimatedTeddy pose="thinking" size={46} />
                 ) : (
-                  <AnimatedPanda pose="thinking" size={54} />
+                  <AnimatedPanda pose="thinking" size={46} />
                 )}
               </div>
 
               {/* Question Text */}
-              <h2 className="text-xl sm:text-2xl font-black text-slate-800 leading-snug">
+              <h2 className="text-lg sm:text-2xl font-black text-slate-800 leading-snug">
                 {currentQ.text}
               </h2>
 

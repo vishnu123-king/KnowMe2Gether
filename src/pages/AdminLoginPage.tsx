@@ -47,7 +47,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 py-12 sm:py-20 space-y-8">
+    <div className="max-w-md mx-auto px-3.5 sm:px-4 py-8 sm:py-20 space-y-6 sm:space-y-8 safe-bottom">
       <button
         type="button"
         onClick={() => onNavigate('/')}
@@ -60,7 +60,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-3xl border-2 border-slate-200 p-6 sm:p-8 shadow-2xl space-y-6 text-center"
+        className="bg-white rounded-2xl sm:rounded-3xl border-2 border-slate-200 p-5 sm:p-8 shadow-2xl space-y-5 sm:space-y-6 text-center"
       >
         <div className="flex justify-center items-center gap-2">
           <AnimatedTeddy pose="thinking" size={90} />

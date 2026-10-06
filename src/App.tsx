@@ -115,7 +115,7 @@ export default function App() {
       </main>
 
       {/* Soft Footer with secret admin link */}
-      <footer className="py-6 text-center text-xs text-slate-400 border-t border-rose-100/50 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-2">
+      <footer className="py-6 px-4 text-center text-xs text-slate-400 border-t border-rose-100/50 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-2 safe-bottom">
         <p className="flex items-center justify-center gap-1">
           Made with <span className="text-amber-500 animate-pulse">🐼✨</span> for Best Friends Everywhere
         </p>

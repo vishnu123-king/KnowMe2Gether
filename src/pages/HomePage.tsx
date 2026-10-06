@@ -46,16 +46,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 sm:py-16 text-center space-y-8">
+    <div className="max-w-4xl mx-auto px-3.5 sm:px-4 py-6 sm:py-14 text-center space-y-6 sm:space-y-8">
       {/* Teddy & Hero Badge */}
-      <div className="flex flex-col items-center justify-center space-y-4">
+      <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4">
         <motion.div
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-200/80 text-rose-700 text-xs sm:text-sm font-bold shadow-xs"
+          className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-200/80 text-rose-700 text-xs sm:text-sm font-bold shadow-xs"
         >
-          <Sparkles className="w-4 h-4 text-rose-500 animate-pulse" />
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-500 animate-pulse" />
           <span>The Ultimate Friendship Quiz</span>
         </motion.div>
 
@@ -64,10 +64,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', damping: 14 }}
-          className="relative py-2 flex items-center justify-center gap-4"
+          className="relative py-1 flex items-center justify-center gap-2 sm:gap-5"
         >
-          <AnimatedTeddy pose="waving" size={150} />
-          <AnimatedPanda pose="waving" size={150} />
+          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center shrink-0">
+            <AnimatedTeddy pose="waving" size={110} className="w-full h-full" />
+          </div>
+          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center shrink-0">
+            <AnimatedPanda pose="waving" size={110} className="w-full h-full" />
+          </div>
           {/* Subtle gentle glow behind */}
           <div className="absolute -inset-4 bg-gradient-to-r from-rose-200/40 via-pink-200/30 to-amber-200/40 rounded-full blur-2xl -z-10" />
         </motion.div>
@@ -78,17 +82,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         initial={{ y: 15, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="space-y-4 max-w-2xl mx-auto"
+        className="space-y-3 sm:space-y-4 max-w-2xl mx-auto px-1"
       >
-        <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight break-words">
           KnowMe2Gether <span className="text-rose-500 inline-block hover:scale-125 transition-transform cursor-default">🐼✨</span>
         </h1>
 
-        <p className="text-lg sm:text-2xl font-bold text-rose-600 font-serif italic">
+        <p className="text-base sm:text-2xl font-bold text-rose-600 font-serif italic">
           “Think your friend knows you really well?”
         </p>
 
-        <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed">
+        <p className="text-xs sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed">
           Create your own questions, share the test, and discover how well they know you.
           Results and answers stay 100% private to you!
         </p>
@@ -160,11 +164,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* Take a Test Modal */}
       {showTakeTestModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-xs p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-xs p-3 sm:p-4">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="bg-white rounded-3xl border-2 border-rose-100 p-6 max-w-md w-full shadow-2xl text-left space-y-4"
+            className="bg-white rounded-3xl border-2 border-rose-100 p-5 sm:p-6 max-w-sm sm:max-w-md w-full shadow-2xl text-left space-y-4 max-h-[92vh] overflow-y-auto"
           >
             <div className="flex items-center justify-between">
               <h3 className="font-extrabold text-lg text-slate-800 flex items-center gap-2">

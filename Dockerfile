@@ -10,7 +10,7 @@ WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package.json package-lock.json* ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Copy frontend source files
 COPY index.html vite.config.ts tsconfig.json ./

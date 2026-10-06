@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, PlusCircle, LayoutDashboard, Sparkles } from 'lucide-react';
+import { Sparkles, PlusCircle, LayoutDashboard, Star } from 'lucide-react';
 
 interface NavbarProps {
   currentPath: string;
@@ -15,14 +15,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
           onClick={() => onNavigate('/')}
           className="flex items-center gap-2 group cursor-pointer text-left focus:outline-none"
         >
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-            <Heart className="w-5 h-5 fill-white" />
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 via-pink-500 to-violet-500 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
+            <Star className="w-5 h-5 fill-white text-white" />
           </div>
           <div>
             <span className="font-extrabold text-lg text-slate-800 tracking-tight flex items-center gap-1">
-              Friendship Test <span className="text-rose-500">❤️</span>
+              KnowMe2Gether <span className="text-amber-500">🌟</span>
             </span>
-            <span className="text-[11px] font-medium text-rose-400 block -mt-1">
+            <span className="text-[11px] font-medium text-purple-500 block -mt-1">
               Know your friends
             </span>
           </div>

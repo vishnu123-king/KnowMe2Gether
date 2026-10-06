@@ -108,7 +108,7 @@ export const ShareCard: React.FC<ShareCardProps> = ({
           {copied ? (
             <>
               <Check className="w-4 h-4" />
-              <span>Link copied! ❤️</span>
+              <span>Link copied! ✨</span>
             </>
           ) : (
             <>

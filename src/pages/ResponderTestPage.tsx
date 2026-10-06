@@ -230,7 +230,7 @@ export const ResponderTestPage: React.FC<ResponderTestPageProps> = ({
 
           <div className="bg-rose-50/70 border border-rose-100 rounded-2xl p-4 text-xs text-slate-600 text-left space-y-1.5">
             <div className="flex items-center gap-2 font-bold text-rose-800 text-xs">
-              <Heart className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
+              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
               <span>Quick Rules:</span>
             </div>
             <p>• {totalQuestions} custom questions prepared by {test.ownerName}.</p>
@@ -442,8 +442,8 @@ export const ResponderTestPage: React.FC<ResponderTestPageProps> = ({
                 </>
               ) : (
                 <>
-                  <Heart className="w-5 h-5 fill-white" />
-                  <span>Submit My Answers ❤️</span>
+                  <Sparkles className="w-5 h-5 text-amber-300" />
+                  <span>Submit My Answers ✨</span>
                 </>
               )}
             </button>

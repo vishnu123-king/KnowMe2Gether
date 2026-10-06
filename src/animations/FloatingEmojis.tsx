@@ -5,18 +5,18 @@ interface FloatingEmojisProps {
   count?: number;
 }
 
-const EMOJI_LIST = ['🐼', '🧸', '❤️', '⭐', '🌸', '🎈', '☁️', '🎀', '✨'];
+const EMOJI_LIST = ['🐼', '🧸', '🌟', '⭐', '🌸', '🎈', '☁️', '🎀', '✨', '💖', '🍀', '🧁'];
 
-export const FloatingEmojis: React.FC<FloatingEmojisProps> = ({ count = 16 }) => {
+export const FloatingEmojis: React.FC<FloatingEmojisProps> = ({ count = 20 }) => {
   const items = useMemo(() => {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       emoji: EMOJI_LIST[i % EMOJI_LIST.length],
-      left: `${(i * 6.5 + 3) % 95}%`,
-      size: 16 + ((i * 3) % 16),
-      delay: (i * 0.4) % 5,
-      duration: 7 + ((i * 1.1) % 6),
-      xOffset: (i % 2 === 0 ? 1 : -1) * (15 + (i * 5) % 30),
+      left: `${(i * 5.2 + 2) % 96}%`,
+      size: 18 + ((i * 4) % 18),
+      delay: (i * 0.3) % 6,
+      duration: 6 + ((i * 0.9) % 5),
+      xOffset: (i % 2 === 0 ? 1 : -1) * (20 + (i * 6) % 40),
     }));
   }, [count]);
 
@@ -25,19 +25,19 @@ export const FloatingEmojis: React.FC<FloatingEmojisProps> = ({ count = 16 }) =>
       {items.map((item) => (
         <motion.div
           key={item.id}
-          className="absolute select-none drop-shadow-sm"
+          className="absolute select-none drop-shadow-md"
           style={{
             left: item.left,
-            bottom: '-40px',
+            bottom: '-50px',
             fontSize: item.size,
           }}
-          initial={{ y: 0, opacity: 0, scale: 0.5, x: 0 }}
+          initial={{ y: 0, opacity: 0, scale: 0.4, x: 0 }}
           animate={{
-            y: '-115vh',
-            opacity: [0, 0.85, 0.9, 0],
-            scale: [0.5, 1.2, 1, 0.8],
-            x: [0, item.xOffset, -item.xOffset, 0],
-            rotate: [0, 20, -20, 10],
+            y: '-120vh',
+            opacity: [0, 0.9, 0.95, 0],
+            scale: [0.4, 1.3, 1.1, 0.9],
+            x: [0, item.xOffset, -item.xOffset, item.xOffset / 2],
+            rotate: [0, 35, -35, 15],
           }}
           transition={{
             duration: item.duration,

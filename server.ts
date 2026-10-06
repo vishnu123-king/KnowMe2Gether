@@ -660,6 +660,77 @@ app.delete('/api/owner/tests/:id', requireOwnerAuth, (req, res) => {
 });
 
 // ==========================================
+// ADMIN CONSOLE ENDPOINTS
+// ==========================================
+function requireAdminAuth(req: Request, res: Response, next: NextFunction) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Unauthorized: Admin token required.' });
+  }
+  const token = authHeader.replace('Bearer ', '').trim();
+  if (token !== 'secret_admin_session_token_xyz987') {
+    return res.status(401).json({ message: 'Unauthorized: Invalid admin token.' });
+  }
+  next();
+}
+
+app.post('/api/admin/login', (req, res) => {
+  const { password } = req.body || {};
+  if (password !== 'admin123') {
+    return res.status(401).json({ message: 'Incorrect admin password.' });
+  }
+  res.json({ success: true, token: 'secret_admin_session_token_xyz987' });
+});
+
+app.get('/api/admin/stats', requireAdminAuth, (req, res) => {
+  const allTests = Object.values(store.tests);
+  const totalTests = allTests.length;
+  const completedTests = allTests.filter((t) => t.status === 'completed').length;
+  const waitingTests = totalTests - completedTests;
+
+  const baseUrl = getBaseUrl(req);
+  const testsList = allTests
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .map((t) => ({
+      id: t.id,
+      title: t.title,
+      ownerName: t.ownerName,
+      friendName: t.friendName,
+      questionCount: t.questions.length,
+      status: t.status,
+      createdAt: t.createdAt,
+      completedAt: t.completedAt || null,
+      shareUrl: `${baseUrl}/test/${t.responderToken}`,
+    }));
+
+  res.json({
+    totalTests,
+    completedTests,
+    waitingTests,
+    tests: testsList,
+  });
+});
+
+app.delete('/api/admin/tests/:id', requireAdminAuth, (req, res) => {
+  const testId = req.params.id;
+  const test = store.tests[testId];
+  if (!test) {
+    return res.status(404).json({ message: 'Test not found.' });
+  }
+
+  delete store.tests[testId];
+  delete store.responderTokens[test.responderToken];
+  if (store.ownerTokens[test.ownerToken]) {
+    store.ownerTokens[test.ownerToken] = store.ownerTokens[test.ownerToken].filter(
+      (id) => id !== testId
+    );
+  }
+  saveStore();
+
+  res.json({ success: true, message: 'Test deleted successfully by admin.' });
+});
+
+// ==========================================
 // STATIC FILES & SPA FALLBACK / VITE MIDDLEWARE
 // ==========================================
 

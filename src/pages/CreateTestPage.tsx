@@ -203,7 +203,7 @@ export const CreateTestPage: React.FC<CreateTestPageProps> = ({ onNavigate }) =>
         {/* Basic Details Card */}
         <div className="bg-white rounded-3xl border-2 border-rose-100 p-6 shadow-xs space-y-5">
           <div className="flex items-center gap-2 border-b border-rose-50 pb-3">
-            <Heart className="w-4 h-4 text-rose-500 fill-rose-500" />
+            <Sparkles className="w-4 h-4 text-amber-500" />
             <h2 className="font-extrabold text-base text-slate-800">
               Basic Information
             </h2>

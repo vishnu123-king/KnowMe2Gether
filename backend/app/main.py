@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from backend.app.database.session import engine, Base
 from backend.app.api.public.router import router as public_router
 from backend.app.api.owner.router import router as owner_router
+from backend.app.api.admin.router import router as admin_router
 
 load_dotenv()
 
@@ -32,6 +33,7 @@ app.add_middleware(
 # Register API Routers
 app.include_router(public_router)
 app.include_router(owner_router)
+app.include_router(admin_router)
 
 # Health Check Endpoint (Section 39)
 @app.get("/health")

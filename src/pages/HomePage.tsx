@@ -81,7 +81,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         className="space-y-4 max-w-2xl mx-auto"
       >
         <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
-          Friendship Test <span className="text-rose-500 inline-block hover:scale-125 transition-transform cursor-default">❤️</span>
+          KnowMe2Gether <span className="text-rose-500 inline-block hover:scale-125 transition-transform cursor-default">🐼✨</span>
         </h1>
 
         <p className="text-lg sm:text-2xl font-bold text-rose-600 font-serif italic">
@@ -169,7 +169,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <div className="flex items-center justify-between">
               <h3 className="font-extrabold text-lg text-slate-800 flex items-center gap-2">
                 <span>Enter Test Link or Code</span>
-                <Heart className="w-4 h-4 text-rose-500 fill-rose-500" />
+                <Sparkles className="w-4 h-4 text-amber-500" />
               </h3>
               <button
                 type="button"

@@ -1,5 +1,5 @@
 {
-  "name": "Friendship Test",
+  "name": "KnowMe2Gether",
   "description": "A cute, animated friendship quiz platform to test how well your friends know you with private owner answer review and secure shareable links.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

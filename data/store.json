@@ -1,0 +1,90 @@
+{
+  "tests": {
+    "test_OtaZwufs": {
+      "id": "test_OtaZwufs",
+      "ownerId": "owner_chbA3B",
+      "ownerToken": "ab2492e6c95c3dd3c2798086575840e44b7af728f2d6de5de1de2513c49f0f9d",
+      "ownerName": "Alex",
+      "friendName": "Sam",
+      "title": "How Well Do You Know Me?",
+      "description": "Let us see!",
+      "responderToken": "SoOYbRaN3f",
+      "status": "completed",
+      "createdAt": "2026-10-06T04:29:10.986Z",
+      "completedAt": "2026-10-06T04:29:20.495Z",
+      "questions": [
+        {
+          "id": "q_dRUmle",
+          "type": "text",
+          "text": "What is my favorite food?",
+          "order": 1,
+          "options": [],
+          "correctAnswer": "Pizza",
+          "acceptedAnswers": [
+            "pepperoni pizza",
+            "margherita"
+          ]
+        },
+        {
+          "id": "q_0cNegM",
+          "type": "multiple_choice",
+          "text": "What is my dream destination?",
+          "order": 2,
+          "options": [
+            "Tokyo",
+            "Paris",
+            "New York",
+            "Reykjavik"
+          ],
+          "correctAnswer": "Tokyo",
+          "acceptedAnswers": []
+        },
+        {
+          "id": "q_FhqvcG",
+          "type": "yes_no",
+          "text": "Do I like coffee?",
+          "order": 3,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "correctAnswer": "Yes",
+          "acceptedAnswers": []
+        }
+      ],
+      "submission": {
+        "id": "sub_ofYUkFJF",
+        "testId": "test_OtaZwufs",
+        "submittedAt": "2026-10-06T04:29:20.495Z",
+        "score": 2,
+        "total": 3,
+        "percentage": 67,
+        "answers": [
+          {
+            "questionId": "q_dRUmle",
+            "answerText": "  pizza! ",
+            "isCorrect": true
+          },
+          {
+            "questionId": "q_0cNegM",
+            "answerText": "Tokyo",
+            "isCorrect": true
+          },
+          {
+            "questionId": "q_FhqvcG",
+            "answerText": "No",
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  },
+  "responderTokens": {
+    "SoOYbRaN3f": "test_OtaZwufs"
+  },
+  "ownerTokens": {
+    "ab2492e6c95c3dd3c2798086575840e44b7af728f2d6de5de1de2513c49f0f9d": [
+      "test_OtaZwufs"
+    ]
+  }
+}

@@ -100,7 +100,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password (default: admin123)"
+                placeholder="Enter admin password"
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium text-slate-800 focus:outline-none focus:border-slate-500 focus:bg-white transition-all"
               />
             </div>
@@ -118,10 +118,6 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({
             )}
           </button>
         </form>
-
-        <p className="text-[11px] text-slate-400 italic">
-          Hint: Default password is <code className="bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 font-mono">admin123</code>
-        </p>
       </motion.div>
     </div>
   );
